@@ -45,7 +45,7 @@ def main() -> None:
             "notes": ""
         }
     ]
-    space_stations = [
+    space_stations: list = [
         {
             'station_id': 'LGW125',
             'name': 'Titan Mining Outpost',
@@ -172,9 +172,9 @@ def main() -> None:
 
     for station in space_stations:
         try:
-            model: StationModel = StationModel(**station)
-            status: str = "Operational" if model.is_operational else\
-                          "Non-operational"
+            model = StationModel(**station)
+            status = "Operational" if model.is_operational else\
+                     "Non-operational"
             print()
             print("Valid station created:")
             print("ID:", model.station_id)
